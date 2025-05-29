@@ -45,6 +45,7 @@
                 android:layout_margin="16dp">
 
                 <TextView
+                    android:id="@+id/userName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="User Name"
@@ -58,6 +59,15 @@
                     android:text="hello@gmail.com"
                     android:textColor="#666666"
                     android:layout_marginTop="4dp"/>
+                    
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#FF5722"
+                    android:layout_marginTop="16dp"/>
             </LinearLayout>
 
             <!-- Divider -->
@@ -79,6 +89,7 @@
 
             <!-- Settings Items -->
             <LinearLayout
+                android:id="@+id/settingsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -121,6 +132,7 @@
 
                 <!-- Change Password -->
                 <LinearLayout
+                    android:id="@+id/layoutChangePassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -165,6 +177,7 @@
 
                 <!-- Information -->
                 <LinearLayout
+                    android:id="@+id/layoutInformation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -202,6 +215,7 @@
 
                 <!-- About App -->
                 <LinearLayout
+                    android:id="@+id/layoutAboutApp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -224,6 +238,7 @@
 
                 <!-- Terms & Conditions -->
                 <LinearLayout
+                    android:id="@+id/layoutTermsConditions"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -246,6 +261,7 @@
 
                 <!-- Privacy Policy -->
                 <LinearLayout
+                    android:id="@+id/layoutPrivacyPolicy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"

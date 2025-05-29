@@ -128,9 +128,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
+                    android:padding="16dp">                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="My Submission"
@@ -139,14 +137,16 @@
                         android:textColor="#000000" />
 
                     <TextView
+                        android:id="@+id/textSubmissionDetails"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Waste Type:\nSubmitted on:\nQuantity:\nPickup Date:\nTime:\nPayment Status:\nReference ID:"
+                        android:text="No submissions yet. Add waste to start recycling!"
                         android:textSize="14sp"
                         android:layout_marginTop="12dp"
                         android:textColor="#444444" />
 
                     <LinearLayout
+                        android:id="@+id/layoutSubmissionButtons"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
@@ -167,7 +167,18 @@
                             android:text="Pay"
                             android:textSize="14sp"
                             android:layout_marginStart="8dp" />
+
+                        <Button
+                            android:id="@+id/buttonDelete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Delete"
+                            android:textSize="14sp"
+                            android:layout_marginStart="8dp"
+                            android:backgroundTint="@android:color/holo_red_light"
+                            android:textColor="@android:color/white" />
                     </LinearLayout>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -203,6 +214,7 @@
 
             <!--  My Earnings Card -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/earningsCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -228,12 +240,11 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
+                            android:orientation="vertical">                            <TextView
+                                android:id="@+id/textTotalEarnings"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Rm100.50"
+                                android:text="Rm0.00"
                                 android:textColor="#FFFFFF"
                                 android:textSize="20sp"
                                 android:textStyle="bold" />
@@ -251,12 +262,11 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:orientation="vertical"
-                            android:gravity="end">
-
-                            <TextView
+                            android:gravity="end">                            <TextView
+                                android:id="@+id/textPendingPayment"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Rm100"
+                                android:text="Rm0.00"
                                 android:textColor="#FFFFFF"
                                 android:textSize="20sp"
                                 android:textStyle="bold"/>
@@ -284,22 +294,21 @@
                             android:text="****"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
-                            android:layout_marginEnd="8dp"/>
-
-                        <TextView
+                            android:layout_marginEnd="8dp"/>                        <TextView
+                            android:id="@+id/textLastPaymentAmount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Rm 30.50"
+                            android:text="Rm0.00"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
                             android:textStyle="bold"/>
                     </LinearLayout>
 
-                    <!-- Last Payment Info -->
-                    <TextView
+                    <!-- Last Payment Info -->                    <TextView
+                        android:id="@+id/textLastPaymentDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Last Payment on Feb 20, 2025"
+                        android:text="No payments yet"
                         android:textColor="#FFFFFF"
                         android:textSize="12sp"
                         android:layout_gravity="center_horizontal"

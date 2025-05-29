@@ -35,26 +35,31 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_centerInParent="true"/>
+            
+        <ImageButton
+            android:id="@+id/btnMenu"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:src="@android:drawable/ic_menu_more"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Menu"
+            android:scaleType="centerInside"
+            android:tint="@android:color/white"/>
     </RelativeLayout>
 
     <!-- 🔽 Chat messages -->
-    <ScrollView
-        android:id="@+id/scrollView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/inputBar"
         android:layout_below="@id/headerLayout"
-        android:fillViewport="true"
-        android:overScrollMode="always"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
         android:padding="16dp"
-        tools:ignore="SpeakableTextPresentCheck">
-
-        <LinearLayout
-            android:id="@+id/chatContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
+        app:stackFromEnd="true" />
 
     <!-- Input Bar -->
     <LinearLayout
@@ -88,4 +93,15 @@
             android:contentDescription="Send"
             android:layout_marginStart="8dp" />
     </LinearLayout>
+    
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        app:menu="@menu/bottom_nav_menu" />
+
+
 </RelativeLayout>

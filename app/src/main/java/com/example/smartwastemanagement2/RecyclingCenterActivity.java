@@ -17,6 +17,7 @@ import com.google.android.gms.maps.model.*;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.Autocomplete;
+import com.google.android.libraries.places.widget.AutocompleteActivity;
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -59,7 +60,7 @@ public class RecyclingCenterActivity extends FragmentActivity implements OnMapRe
             startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE);
         });
 
-        //  Load Map Fragment
+        // Load Map Fragment
         SupportMapFragment mapFragment = SupportMapFragment.newInstance();
         getSupportFragmentManager()
                 .beginTransaction()
@@ -94,19 +95,33 @@ public class RecyclingCenterActivity extends FragmentActivity implements OnMapRe
     public void onMapReady(@NonNull GoogleMap googleMap) {
         mMap = googleMap;
 
-        //  location (KL)
-        LatLng defaultLocation = new LatLng(3.1390, 101.6869);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 14f));
-        mMap.addMarker(new MarkerOptions().position(defaultLocation).title("Recycling Center"));
+        // Recycling Center
+        LatLng center1 = new LatLng(3.1390, 101.6869); // KL
+        LatLng center2 = new LatLng(3.0738, 101.5183); // Gombak
+        LatLng center3 = new LatLng(3.0847, 101.5495); // Setapak
+        LatLng center4 = new LatLng(3.1578, 101.7113); // Ampang
+
+        // Markers
+        mMap.addMarker(new MarkerOptions().position(center1).title("Recycling Center - KL"));
+        mMap.addMarker(new MarkerOptions().position(center2).title("Recycling Center - Gombak"));
+        mMap.addMarker(new MarkerOptions().position(center3).title("Recycling Center - Setapak"));
+        mMap.addMarker(new MarkerOptions().position(center4).title("Recycling Center - Ampang"));
+
+        // Fokus ke lokasi utama (KL)
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(center1, 12f));
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        Log.d("DEBUG", "onActivityResult triggered"); // Debug: method called
+
         if (requestCode == AUTOCOMPLETE_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK && data != null) {
                 Place place = Autocomplete.getPlaceFromIntent(data);
+                Log.d("DEBUG", "Place selected: " + place.getName() + ", Location: " + place.getLatLng());
+
                 if (mMap != null && place.getLatLng() != null) {
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(place.getLatLng(), 15f));
                     mMap.addMarker(new MarkerOptions()
@@ -115,8 +130,11 @@ public class RecyclingCenterActivity extends FragmentActivity implements OnMapRe
 
                     editSearch.setText(place.getName());
                 }
+            } else if (resultCode == AutocompleteActivity.RESULT_ERROR && data != null) {
+                Status status = Autocomplete.getStatusFromIntent(data);
+                Log.e("PLACES_ERROR", "Autocomplete error: " + status.getStatusMessage());
             } else if (resultCode == Activity.RESULT_CANCELED) {
-                Log.e("Places Error", "User canceled or error occurred");
+                Log.e("Places Error", "User canceled autocomplete or unknown error");
             }
         }
     }

@@ -54,24 +54,52 @@
                     android:layout_marginEnd="12dp"
                     android:layout_marginTop="19dp" />
 
-                <ImageView
-                    android:id="@+id/walletIcon"
-                    android:layout_width="30dp"
-                    android:layout_height="35dp"
-                    android:src="@drawable/wallet_icon"
+                <!-- Wallet with balance display -->
+                <LinearLayout
+                    android:id="@+id/walletLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
                     android:layout_toStartOf="@id/notificationIcon"
-                    android:layout_marginEnd="14dp"
-                    android:layout_marginTop="19dp" />
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="14dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless">
+
+                    <ImageView
+                        android:id="@+id/walletIcon"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:src="@drawable/wallet_icon"
+                        android:tint="#FFFFFF" />
+                        
+                    <TextView
+                        android:id="@+id/walletBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RM0.00"
+                        android:textSize="12sp"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:background="@drawable/wallet_balance_background"
+                        android:layout_marginTop="2dp"/>
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/searchBar"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:hint="Search"
+                    android:layout_height="40dp"
+                    android:hint="Search services..."
                     android:padding="12dp"
                     android:layout_alignParentBottom="true"
                     android:background="@drawable/rounded_white_box"
-                    android:drawableStart="@drawable/search" />
+                    android:drawableStart="@drawable/search"
+                    android:drawablePadding="8dp"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:maxLines="1" />
             </RelativeLayout>
 
             <!-- NEWS -->

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Waste"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Waste Type Selection -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Waste Type"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroupWasteType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/radioPaper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Paper/Cardboard"
+                android:textSize="14sp"
+                android:padding="8dp"/>
+
+            <RadioButton
+                android:id="@+id/radioPlastic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Plastic"
+                android:textSize="14sp"
+                android:padding="8dp"/>
+
+            <RadioButton
+                android:id="@+id/radioMetal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Metal"
+                android:textSize="14sp"
+                android:padding="8dp"/>
+
+            <RadioButton
+                android:id="@+id/radioGlass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Glass"
+                android:textSize="14sp"
+                android:padding="8dp"/>
+
+            <RadioButton
+                android:id="@+id/radioElectronic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Electronic Waste"
+                android:textSize="14sp"
+                android:padding="8dp"/>
+
+            <RadioButton
+                android:id="@+id/radioOrganic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Organic Waste"
+                android:textSize="14sp"
+                android:padding="8dp"/>
+
+            <RadioButton
+                android:id="@+id/radioOther"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Other"
+                android:textSize="14sp"
+                android:padding="8dp"/>
+        </RadioGroup>
+
+        <!-- Quantity -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Approximate Weight (kg)"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/editTextWeight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter weight in kg"
+            android:inputType="numberDecimal"
+            android:background="@drawable/rounded_white_box"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Pickup Date -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pickup Date"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select date"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="true"
+            android:background="@drawable/rounded_white_box"
+            android:padding="12dp"
+            android:drawableEnd="@android:drawable/ic_menu_my_calendar"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Pickup Time -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pickup Time"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/editTextTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Select time"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="true"
+            android:background="@drawable/rounded_white_box"
+            android:padding="12dp"
+            android:drawableEnd="@android:drawable/ic_menu_recent_history"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Pickup Address -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pickup Address"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/editTextAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter pickup address"
+            android:inputType="textPostalAddress"
+            android:background="@drawable/rounded_white_box"
+            android:padding="12dp"
+            android:minLines="2"
+            android:gravity="top|start"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Additional Notes -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Additional Notes (Optional)"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/editTextNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Add any special instructions"
+            android:inputType="textMultiLine"
+            android:background="@drawable/rounded_white_box"
+            android:padding="12dp"
+            android:minLines="3"
+            android:gravity="top|start"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/buttonSubmitWaste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:textStyle="bold"
+            android:backgroundTint="#D84315"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Cancel Button -->
+        <Button
+            android:id="@+id/buttonCancelWaste"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="#D84315"
+            android:backgroundTint="#FFFFFF"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+    </LinearLayout>
+</ScrollView>

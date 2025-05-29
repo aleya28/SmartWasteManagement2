@@ -3,10 +3,10 @@
     package="com.example.smartwastemanagement2">
 
     <!-- Location Permissions -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-    <application
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />    <application
+        android:name=".SmartWasteApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -38,9 +38,12 @@
 
         <activity android:name=".RewardActivity" android:exported="true" />
         <activity android:name=".MainActivity" android:exported="true" />
-        <activity android:name=".BookingActivity" android:exported="true" />
-        <activity android:name=".RecyclingCenterActivity" android:exported="true" />
-        <activity android:name=".EducationActivity" android:exported="true" />
+        <activity android:name=".BookingActivity" android:exported="true" />        <activity android:name=".RecyclingCenterActivity" android:exported="true" />
+        <activity android:name=".EducationActivity" android:exported="true" />        <activity android:name=".InformationActivity" android:exported="true" />        <activity android:name=".AppInfoActivity" android:exported="true" />
+        <activity android:name=".TermsConditionsActivity" android:exported="true" />        <activity android:name=".PrivacyPolicyActivity" android:exported="true" />
+        <activity android:name=".AddWasteActivity" android:exported="true" />
+        <activity android:name=".PaymentActivity" android:exported="true" />
+        <activity android:name=".AllSubmissionsActivity" android:exported="true" />
 
     </application>
 </manifest>
